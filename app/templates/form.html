@@ -16,7 +16,14 @@
     </div>
 
     <div class="col-8 m-auto pt-4 pb-2 text-center">
-        Aqui vai vir o form
+        <form name="form" id="form" action="/create/" method="post">
+            {% csrf_token %}
+            <!--{{form.as_p}} exibe em forma de parágrafo-->
+            <div class="form-group mt-4">Nome: {{form.nome}}</div>
+            <div class="form-group mt-4">Série: {{form.serie}}</div>
+            <div class="form-group mt-4">Nota final: {{form.nota_final}}</div>
+            <input type="submit" class="btn btn-success mt-4" value="Salvar">
+        </form>
     </div>
 </body>
 </html>

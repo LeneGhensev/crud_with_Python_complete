@@ -31,3 +31,13 @@ Para rodar o projeto, utiliza o comando:
 > python manage.py runserver
 
 Para o index.html, foi utilizado o Bootstrap via CDN retirado do site https://getbootstrap.com/, assim como a tabela retirada de https://getbootstrap.com/docs/4.1/content/tables/ modelo Table head options
+
+A documentação do Django https://docs.djangoproject.com/en/4.2/ref/models/fields foi utilizada para consultar exemplo de model, tipos de campos, entre outras informações.
+
+Para criação do model na pasta migrations, rodar o comando na pasta python:
+> python manage.py makemigrations
+
+Posteriormente rodar o comando para criação do Banco de Dados:
+> python manage.py migrate
+
+Esse comando criará o arquivo "db.sqlite3", na pasta venv
