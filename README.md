@@ -29,3 +29,5 @@ Para que o projeto entenda que essa pasta app faz parte dele, é necessário ins
 
 Para rodar o projeto, utiliza o comando:
 > python manage.py runserver
+
+Para o index.html, foi utilizado o Bootstrap via CDN retirado do site https://getbootstrap.com/, assim como a tabela retirada de https://getbootstrap.com/docs/4.1/content/tables/ modelo Table head options
