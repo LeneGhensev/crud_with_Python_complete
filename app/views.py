@@ -1,11 +1,23 @@
 from django.shortcuts import render, redirect
 from app.forms import AlunosForm
 from app.models import Alunos
+from django.core.paginator import Paginator
 
 # Create your views here.
+
 def home(request):
     data = {}
-    data['db'] = Alunos.objects.all()
+    #data['db'] = Alunos.objects.all()
+    all = Alunos.objects.all()
+    paginator = Paginator(all, 5) #Paginação com a quantidade de itens informados
+    pages = request.GET.get('page')
+    data['db'] = paginator.get_page(pages)
+
+    search = request.GET.get('search')
+    if search:
+        data['db'] = Alunos.objects.filter(nome__icontains=search)
+    else:
+        data['db'] = Alunos.objects.all()
     return render(request, 'index.html', data)
 
 def form(request):
