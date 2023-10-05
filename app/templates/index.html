@@ -29,17 +29,28 @@
               <th scope="col">Nome</th>
               <th scope="col">Série</th>
               <th scope="col">Nota Final</th>
+              <th scope="col">Ações</th>
             </tr>
           </thead>
           <tbody>
+          {% for dbs in db %}
             <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+              <th>{{dbs.id}}</th>
+              <td>{{dbs.nome}}</td>
+              <td>{{dbs.serie}}</td>
+              <td>{{dbs.nota_final}}</td>
+              <td>
+                  <a href="/view/{{dbs.id}}/" class="btn btn-dark">Visualizar</a>
+                  <a href="/edit/{{dbs.id}}/" class="btn btn-primary">Editar</a>
+                  <a href="/delete/{{dbs.id}}/" class="btn btn-danger btnDel">Deletar</a>
+              </td>
+
             </tr>
+          {% endfor %}
           </tbody>
         </table>
     </div>
+    {% load static %}
+    <script src="{% static 'javascript.js' %}"></script>
 </body>
 </html>
