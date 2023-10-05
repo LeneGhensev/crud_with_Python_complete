@@ -16,6 +16,7 @@
     </div>
 
     <div class="col-8 m-auto pt-4 pb-2 text-center">
+        <div id="result"></div>
         <form name="form" id="form" action="{% if db %}/update/{{db.id}}/{%else%}/create/{% endif %}" method="post"> <!--para o formulário funcionar tanto para criação quanto para edição de registros, criou-se o if. Se existir o db ele chama o update, senão o create-->
             {% csrf_token %}
             <!--{{form.as_p}} exibe em forma de parágrafo-->
@@ -25,6 +26,8 @@
             <input type="submit" class="btn btn-success mt-4" value="Salvar">
         </form>
     </div>
+    {% load static %}
+    <script src="{% static 'javascript.js' %}"></script>
 </body>
 </html>
 

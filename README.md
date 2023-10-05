@@ -1,8 +1,8 @@
-#Projeto CRUD em Python
+# Projeto CRUD em Python
 
-##Iniciando o projeto
+## Iniciando o projeto
 
-*Descrição*: CRUD utilizando a linguagem Python, realizado no curso Crud com Python do Canal Webdesign em Foco, utilizando o sistemas de gerenciamento de bancos de dados MySQL.
+>Descrição: Projeto CRUD utilizando a linguagem Python, realizado no curso Crud com Python do Canal Webdesign em Foco, utilizando o sistemas de gerenciamento de bancos de dados MySQL.
 
 Primeiro foi criada uma máquina virtual para os módulos ficarem especificamente para o projeto e não de maneira global, para isso criei uma pasta chamada python e utilizei o comando dentro dela:
 ```
@@ -21,7 +21,7 @@ activate
 ```
 Tudo o que instalar no projeto ficará restrito nesse diretório.
 
-##Desenvolvimento do projeto
+## Desenvolvimento do projeto
 Para esse projeto, utilizamos o framework Django, com o seguinte comando para instalar: 
 ```
 python -m pip install Django  
@@ -41,7 +41,7 @@ python manage.py startapp app
 
 Para que o projeto entenda que essa pasta app faz parte dele, é necessário inserir o nome dele, no caso 'app', na lista de apps do projeto do item INSTALLED_APPS, do arquivo "settings.py" da pasta "myproject".
 
-###Rodar o projeto
+### Rodando o projeto
 
 Para rodar o projeto, utiliza-se os comandos: </br>
 
@@ -58,7 +58,7 @@ activate
 python manage.py runserver
 ```
 
-##Estrutura do Projeto
+## Estrutura do Projeto
 A estrutura de um projeto Django é baseada no padrão de arquitetura MVC (Model-View-Controller). 
 
 A estrutura de pastas padrão de um projeto Django é a seguinte:
@@ -114,6 +114,7 @@ A documentação do Django https://docs.djangoproject.com/en/4.2/ref/models/fiel
 
 ### Banco de Dados
 
+Foi utilizado o SQLLite e o [DB Browser](https://sqlitebrowser.org/) como gerenciador de banco de dados.
 Para criação do model na pasta migrations, rodar o comando na pasta python:
 ```
 python manage.py makemigrations
@@ -125,4 +126,4 @@ python manage.py migrate
 ```
 
 Esse comando criará o arquivo "db.sqlite3", na pasta venv.
-Isso porque no arquivo "settings.py" no item DATABASES foi informado o sqlite3.
+Isso porque no arquivo "settings.py" no item DATABASES foi informado que seria utilizado o sqlite3.
